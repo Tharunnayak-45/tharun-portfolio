@@ -72,7 +72,7 @@ export default function Projects() {
       ],
 
       github:
-        "https://github.com/Tharunnayak-45",
+        "https://github.com/Tharunnayak-45/NeuroTac-AI",
 
       demo:
         "https://neurotac.vercel.app/",
