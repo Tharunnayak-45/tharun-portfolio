@@ -20,7 +20,7 @@ export default function Profiles() {
         {
             name: "HackerRank",
             username: "Tharun",
-            link: "https://www.hackerrank.com/",
+            link: "https://www.hackerrank.com/profile/MudavathTharun45/",
             icon: SiHackerrank,
         },
         {
