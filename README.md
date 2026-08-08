@@ -75,17 +75,15 @@ A web-based courier management application developed to simplify courier booking
 🔗 **[View Project on GitHub](https://github.com/Tharunnayak-45/Courier-Tracking-System-App)**
 
 ---
-
 ## 💻 Coding Profiles
 
-| Platform      | Profile                                                  |
-| ------------- | -------------------------------------------------------- |
-| 🐙 GitHub     | [Tharunnayak-45](https://github.com/Tharunnayak-45)      |
-| 💡 LeetCode   | [Tharunnayak_45](https://leetcode.com/u/Tharunnayak_45/) |
-| 🏆 HackerRank | [Tharun]((https://www.hackerrank.com/profile/MudavathTharun45)/)                    |
-| 👔 LinkedIn   | [Mudavath Tharun](www.linkedin.com/in/mudavaththarun45)             |
+| Platform      | Profile                                                                  |
+| ------------- | ------------------------------------------------------------------------ |
+| 🐙 GitHub     | [Tharunnayak-45](https://github.com/Tharunnayak-45)                      |
+| 💡 LeetCode   | [Tharunnayak_45](https://leetcode.com/u/Tharunnayak_45/)                 |
+| 🏆 HackerRank | [MudavathTharun45](https://www.hackerrank.com/profile/MudavathTharun45/) |
+| 👔 LinkedIn   | [Mudavath Tharun](https://www.linkedin.com/in/mudavaththarun45/)         |
 
----
 
 ## 📊 Portfolio Highlights
 
