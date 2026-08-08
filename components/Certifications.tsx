@@ -36,7 +36,6 @@ export default function Certifications() {
         "Completed industry-oriented learning programs focused on technology skills and professional development.",
     },
 
-
     {
       title: "Java Basic Certification",
 

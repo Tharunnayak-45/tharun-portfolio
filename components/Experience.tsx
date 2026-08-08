@@ -30,7 +30,7 @@ export default function Experience() {
       location: "Virtual Internship",
 
       certificate:
-        "/certificates/servicenow-virtual-internship.pdf",
+        "/Certificates/servicenow-virtual-internship.pdf",
 
       description:
         "Completed a ServiceNow Virtual Internship focused on cloud-based platform concepts, workflow automation, IT Service Management, and application development fundamentals.",
@@ -55,7 +55,7 @@ export default function Experience() {
       location: "Remote",
 
       certificate:
-        "/certificates/codealpha-internship.pdf",
+        "/Certificates/codealpha-internship.pdf",
 
       description:
         "Worked as a Frontend Development Intern and developed responsive web applications using HTML, CSS, and JavaScript. Built projects including Image Gallery and Calculator applications while improving UI development and problem-solving skills.",
