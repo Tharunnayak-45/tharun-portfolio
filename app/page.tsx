@@ -7,15 +7,12 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Certifications from "@/components/Certifications";
 import Profiles from "@/components/Profiles";
+import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 
-
 export default function Home() {
-
     return (
-
         <main>
-
             <Navbar />
 
             <Hero />
@@ -35,10 +32,11 @@ export default function Home() {
             {/* Coding Profiles */}
             <Profiles />
 
+            {/* Achievements Section */}
+            <Achievements />
+
+            {/* Contact */}
             <Contact />
-
         </main>
-
     );
-
 }
