@@ -87,7 +87,7 @@ const profiles: Profile[] = [
     {
         name: "HackerRank",
         username: "Tharun",
-        link: "https://www.hackerrank.com/",
+        link: "https://www.hackerrank.com/profile/MudavathTharun45",
         icon: faHackerrank,
         type: "fa",
     },
