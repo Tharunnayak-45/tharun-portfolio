@@ -10,16 +10,18 @@ import {
   Code2,
   Download,
   Mail,
+  ArrowRight,
+  Sparkles,
 } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Computer Science Student",
+  "Full Stack Developer",
   "Java Developer",
-  "Salesforce Trailhead Learner",
-  "B.Tech CSE Student",
+  "AI & ML Enthusiast",
+  "Frontend Developer",
 ];
 
 export default function Hero() {
@@ -40,21 +42,75 @@ export default function Hero() {
     <section
       id="home"
       className="
+        relative
         min-h-screen
         flex
         items-center
-        pt-24
+        overflow-hidden
+        pt-28
+        pb-16
         px-6
       "
     >
+      {/* =====================================================
+          BACKGROUND GLOW
+      ====================================================== */}
+
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="
+            absolute
+            top-20
+            left-10
+            w-72
+            h-72
+            bg-indigo-600/10
+            rounded-full
+            blur-3xl
+          "
+        />
+
+        <div
+          className="
+            absolute
+            bottom-10
+            right-10
+            w-80
+            h-80
+            bg-purple-600/10
+            rounded-full
+            blur-3xl
+          "
+        />
+
+        <div
+          className="
+            absolute
+            top-1/2
+            left-1/2
+            w-96
+            h-96
+            bg-pink-600/5
+            rounded-full
+            blur-3xl
+            -translate-x-1/2
+            -translate-y-1/2
+          "
+        />
+      </div>
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ====================================================== */}
+
       <div
         className="
           max-w-7xl
           mx-auto
           w-full
           grid
-          md:grid-cols-2
-          gap-12
+          lg:grid-cols-[1.1fr_0.9fr]
+          gap-16
           items-center
         "
       >
@@ -76,6 +132,65 @@ export default function Hero() {
             ease: "easeOut",
           }}
         >
+          {/* AVAILABLE BADGE */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 0.5,
+            }}
+            className="
+              inline-flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              rounded-full
+              glass
+              border
+              border-indigo-500/20
+              text-sm
+              text-gray-300
+              mb-6
+            "
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span
+                className="
+                  animate-ping
+                  absolute
+                  inline-flex
+                  h-full
+                  w-full
+                  rounded-full
+                  bg-green-400
+                  opacity-75
+                "
+              />
+
+              <span
+                className="
+                  relative
+                  inline-flex
+                  rounded-full
+                  h-2.5
+                  w-2.5
+                  bg-green-400
+                "
+              />
+            </span>
+
+            Open to Opportunities
+          </motion.div>
+
           {/* HELLO */}
 
           <p
@@ -83,6 +198,7 @@ export default function Hero() {
               text-indigo-400
               text-lg
               font-semibold
+              tracking-wide
             "
           >
             Hello, I'm
@@ -93,9 +209,12 @@ export default function Hero() {
           <h1
             className="
               text-5xl
-              md:text-6xl
+              sm:text-6xl
+              lg:text-7xl
               font-bold
-              mt-3
+              tracking-tight
+              mt-2
+              leading-tight
             "
           >
             Mudavath{" "}
@@ -110,8 +229,8 @@ export default function Hero() {
 
           <div
             className="
-              mt-4
-              h-12
+              mt-5
+              min-h-[48px]
               flex
               items-center
               overflow-hidden
@@ -122,25 +241,24 @@ export default function Hero() {
                 key={roleIndex}
                 initial={{
                   opacity: 0,
-                  clipPath: "inset(0 100% 0 0)",
+                  y: 20,
                 }}
                 animate={{
                   opacity: 1,
-                  clipPath: "inset(0 0% 0 0)",
+                  y: 0,
                 }}
                 exit={{
                   opacity: 0,
-                  clipPath: "inset(0 100% 0 0)",
+                  y: -20,
                 }}
                 transition={{
-                  duration: 0.8,
-                  ease: [0.65, 0, 0.35, 1],
+                  duration: 0.5,
+                  ease: "easeOut",
                 }}
                 className="
                   text-2xl
                   md:text-3xl
                   font-semibold
-                  whitespace-nowrap
                   bg-gradient-to-r
                   from-indigo-400
                   via-purple-400
@@ -154,21 +272,25 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-          {/* DESCRIPTION */}
+          {/* =================================================
+              DESCRIPTION
+          ================================================== */}
 
           <p
             className="
               mt-6
               text-gray-400
+              text-base
+              md:text-lg
               leading-relaxed
-              max-w-xl
+              max-w-2xl
             "
           >
-            Final-year B.Tech CSE student passionate about
-            Software Development, Full Stack Web Development,
-            Java, Python, Data Structures, and Artificial
-            Intelligence. Building scalable projects and
-            preparing for top IT company placements.
+            Final-year B.Tech Computer Science and Engineering
+            student focused on building practical software
+            solutions using Java, Python, web technologies,
+            databases, and AI. I enjoy turning ideas into
+            responsive applications and intelligent systems.
           </p>
 
           {/* =================================================
@@ -183,41 +305,53 @@ export default function Hero() {
               mt-8
             "
           >
-            {/* DOWNLOAD RESUME */}
+            {/* VIEW PROJECTS */}
 
-            <a
-              href="/Tharun_Resume_545.pdf"
-              download
+            <Link
+              href="#projects"
               className="
                 primary-btn
                 flex
                 items-center
                 gap-2
+                group
               "
             >
-              <Download size={20} />
+              View My Projects
 
-              Download Resume
-            </a>
+              <ArrowRight
+                size={19}
+                className="
+                  group-hover:translate-x-1
+                  transition-transform
+                "
+              />
+            </Link>
 
-            {/* CONTACT */}
+            {/* DOWNLOAD RESUME */}
 
-            <Link
-              href="#contact"
+            <a
+              href="/Tharunnayak.pdf"
+              download
               className="
                 px-7
                 py-3
                 rounded-full
                 border
-                border-indigo-500
+                border-indigo-500/60
                 hover:bg-indigo-500
                 hover:text-white
                 transition-all
                 duration-300
+                flex
+                items-center
+                gap-2
               "
             >
-              Contact Me
-            </Link>
+              <Download size={19} />
+
+              Resume
+            </a>
           </div>
 
           {/* =================================================
@@ -227,7 +361,8 @@ export default function Hero() {
           <div
             className="
               flex
-              gap-5
+              items-center
+              gap-4
               mt-8
             "
           >
@@ -242,13 +377,16 @@ export default function Hero() {
                 p-3
                 rounded-full
                 glass
+                border
+                border-white/10
                 hover:text-indigo-400
+                hover:border-indigo-500/40
                 hover:scale-110
                 transition-all
                 duration-300
               "
             >
-              <Github size={25} />
+              <Github size={23} />
             </Link>
 
             {/* LINKEDIN */}
@@ -262,13 +400,16 @@ export default function Hero() {
                 p-3
                 rounded-full
                 glass
+                border
+                border-white/10
                 hover:text-indigo-400
+                hover:border-indigo-500/40
                 hover:scale-110
                 transition-all
                 duration-300
               "
             >
-              <Linkedin size={25} />
+              <Linkedin size={23} />
             </Link>
 
             {/* LEETCODE */}
@@ -282,13 +423,16 @@ export default function Hero() {
                 p-3
                 rounded-full
                 glass
+                border
+                border-white/10
                 hover:text-indigo-400
+                hover:border-indigo-500/40
                 hover:scale-110
                 transition-all
                 duration-300
               "
             >
-              <Code2 size={25} />
+              <Code2 size={23} />
             </Link>
 
             {/* EMAIL */}
@@ -300,86 +444,58 @@ export default function Hero() {
                 p-3
                 rounded-full
                 glass
+                border
+                border-white/10
                 hover:text-indigo-400
+                hover:border-indigo-500/40
                 hover:scale-110
                 transition-all
                 duration-300
               "
             >
-              <Mail size={25} />
+              <Mail size={23} />
             </Link>
           </div>
 
           {/* =================================================
-              STATS
+              PROJECT MESSAGE
           ================================================== */}
 
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.8,
+              duration: 0.6,
+            }}
             className="
+              mt-8
               flex
-              flex-wrap
-              gap-10
-              mt-10
+              items-center
+              gap-3
+              text-sm
+              text-gray-400
             "
           >
-            {/* CGPA */}
+            <Sparkles
+              size={17}
+              className="text-indigo-400"
+            />
 
-            <div>
-              <h3
-                className="
-                  text-3xl
-                  font-bold
-                  gradient-text
-                "
-              >
-                8.5
-              </h3>
-
-              <p className="text-gray-400">
-                CGPA
-              </p>
-            </div>
-
-            {/* PROJECTS */}
-
-            <div>
-              <h3
-                className="
-                  text-3xl
-                  font-bold
-                  gradient-text
-                "
-              >
-                4+
-              </h3>
-
-              <p className="text-gray-400">
-                Projects
-              </p>
-            </div>
-
-            {/* CERTIFICATIONS */}
-
-            <div>
-              <h3
-                className="
-                  text-3xl
-                  font-bold
-                  gradient-text
-                "
-              >
-                5+
-              </h3>
-
-              <p className="text-gray-400">
-                Certifications
-              </p>
-            </div>
-          </div>
+            <span>
+              Turning ideas into practical software solutions
+            </span>
+          </motion.div>
         </motion.div>
 
         {/* =====================================================
-            RIGHT SIDE - PROFILE IMAGE
+            RIGHT SIDE - PROFILE PHOTO
         ====================================================== */}
 
         <motion.div
@@ -398,64 +514,277 @@ export default function Hero() {
           className="
             flex
             justify-center
+            lg:justify-end
           "
         >
-          <div
-            className="
-              relative
-              w-72
-              h-72
-              md:w-96
-              md:h-96
-              float-animation
-              group
-            "
-          >
-            {/* GLOW */}
+          <div className="relative">
+
+            {/* =================================================
+                MAIN GLOW
+            ================================================== */}
 
             <div
               className="
                 absolute
-                inset-0
+                -inset-10
                 rounded-full
                 bg-gradient-to-r
-                from-indigo-500
-                via-purple-500
-                to-pink-500
-                blur-2xl
-                opacity-40
-                group-hover:opacity-70
-                transition-all
-                duration-500
+                from-indigo-500/30
+                via-purple-500/30
+                to-pink-500/30
+                blur-3xl
               "
             />
 
-            {/* PROFILE IMAGE */}
+            {/* =================================================
+                PROFILE CONTAINER
+            ================================================== */}
 
-            <Image
-              src="/profiles.png"
-              alt="Mudavath Tharun"
-              fill
-              priority
-              sizes="
-                (max-width: 768px) 288px,
-                384px
-              "
+            <div
               className="
-                rounded-full
-                object-cover
-                object-center
-                border-4
-                border-indigo-500
-                group-hover:border-purple-400
-                group-hover:scale-105
-                transition-all
-                duration-500
+                relative
+                w-64
+                h-64
+                sm:w-72
+                sm:h-72
+                md:w-80
+                md:h-80
+                lg:w-[370px]
+                lg:h-[370px]
+                float-animation
+                group
               "
-            />
+            >
+
+              {/* GRADIENT OUTER RING */}
+
+              <div
+                className="
+                  absolute
+                  -inset-2
+                  rounded-full
+                  bg-gradient-to-r
+                  from-indigo-500
+                  via-purple-500
+                  to-pink-500
+                  opacity-80
+                  blur-sm
+                "
+              />
+
+              {/* DARK INNER RING */}
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  rounded-full
+                  bg-gray-950
+                  border-4
+                  border-gray-900
+                  z-10
+                "
+              />
+
+              {/* PROFILE IMAGE */}
+
+              <Image
+                src="/profiles.png"
+                alt="Mudavath Tharun"
+                fill
+                priority
+                sizes="
+                  (max-width: 640px) 256px,
+                  (max-width: 768px) 288px,
+                  (max-width: 1024px) 320px,
+                  370px
+                "
+                className="
+                  rounded-full
+                  object-cover
+                  object-center
+                  z-20
+                  border-4
+                  border-indigo-500/70
+                  group-hover:border-purple-400
+                  group-hover:scale-[1.03]
+                  transition-all
+                  duration-500
+                "
+              />
+
+              {/* =================================================
+                  CLEAN TOP BADGE
+              ================================================== */}
+
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: -10,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 1,
+                  duration: 0.5,
+                }}
+                className="
+                  absolute
+                  -top-4
+                  right-2
+                  sm:right-0
+                  z-30
+                  glass
+                  border
+                  border-white/10
+                  rounded-2xl
+                  px-4
+                  py-3
+                  shadow-xl
+                "
+              >
+                <div className="flex items-center gap-2">
+                  <Sparkles
+                    size={17}
+                    className="text-purple-400"
+                  />
+
+                  <span className="text-sm font-medium">
+                    Developer
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* =================================================
+                  CLEAN BOTTOM BADGE
+              ================================================== */}
+
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 10,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 1.1,
+                  duration: 0.5,
+                }}
+                className="
+                  absolute
+                  -bottom-5
+                  left-2
+                  sm:left-0
+                  z-30
+                  glass
+                  border
+                  border-white/10
+                  rounded-2xl
+                  px-4
+                  py-3
+                  shadow-xl
+                "
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className="
+                      w-9
+                      h-9
+                      rounded-xl
+                      bg-indigo-500/20
+                      flex
+                      items-center
+                      justify-center
+                    "
+                  >
+                    <Code2
+                      size={19}
+                      className="text-indigo-400"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-semibold">
+                      4+
+                    </p>
+
+                    <p className="text-xs text-gray-400">
+                      Projects
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* =====================================================
+          SCROLL INDICATOR
+      ====================================================== */}
+
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          delay: 1.5,
+          duration: 0.8,
+        }}
+        className="
+          absolute
+          bottom-7
+          left-1/2
+          -translate-x-1/2
+          hidden
+          md:flex
+          flex-col
+          items-center
+          gap-2
+          text-gray-500
+          text-xs
+        "
+      >
+        <span>Scroll to explore</span>
+
+        <div
+          className="
+            w-5
+            h-8
+            rounded-full
+            border
+            border-gray-600
+            flex
+            justify-center
+            pt-1
+          "
+        >
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+              opacity: [1, 0.3, 1],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+            }}
+            className="
+              w-1
+              h-1
+              rounded-full
+              bg-gray-400
+            "
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
+
